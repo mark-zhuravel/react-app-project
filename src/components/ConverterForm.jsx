@@ -27,6 +27,12 @@ const ConverterForm = observer(() => {
     currencyStore.fetchRates(selectedDate);
   }, [selectedDate]);
 
+  // useEffect(() => {
+  //   if (!loading && rates[currency] && rates[convertedCurrency]) {
+  //     setConvertedAmount(convertCurrency(amount, currency, convertedCurrency));
+  //   }
+  // }, [rates, currency, convertedCurrency, amount, loading]);
+
   const validateAmount = (value) => {
     const parsedValue = parseFloat(value);
     const result = amountSchema.safeParse(parsedValue);
